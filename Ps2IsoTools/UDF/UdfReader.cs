@@ -31,7 +31,7 @@ namespace Ps2IsoTools.UDF
         public static uint SectorSize => IsoUtilities.SectorSize;
         public UdfReader(string filePath)
         {
-            data = System.IO.File.Open(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.Read);
+            data = System.IO.File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
             if (!Detect(data))
                 throw new InvalidDataException("File is not a valid UDF ISO");
 
